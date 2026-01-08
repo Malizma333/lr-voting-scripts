@@ -22,3 +22,19 @@ def get_link(id: str):
     else:
         track_link = "http://youtu.be/" + id
     return track_link
+
+
+# Prints the list of links ranked with the cutoff taken into account
+def print_list(links: list[tuple[str, int]], cutoff_index: int):
+    last_ranking = (0, -1)
+    for i, (track_id, score) in enumerate(links):
+        if i == cutoff_index:
+            print(f"\n## Eliminated ({len(links) - cutoff_index})")
+
+        if score == last_ranking[1]:
+            ranking = last_ranking[0] + 1
+        else:
+            ranking = i + 1
+            last_ranking = (i, score)
+
+        print("{:<3} {:<6} {}".format(f"{ranking})", score, get_link(track_id)))
