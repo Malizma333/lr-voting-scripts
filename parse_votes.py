@@ -57,7 +57,7 @@ if len(public_lists) > 0:
     for ranking in public_lists:
         print(ranking[0])
         for index, item in enumerate(ranking[1:]):
-            print(f"{index + 1}) {item}")
+            print(f"{index + 1}) {utils.extract_yt_meta(item)}")
         print()
 
 if len(feedback_array) > 0:
