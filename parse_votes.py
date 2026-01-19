@@ -52,20 +52,19 @@ playlist_url = "http://www.youtube.com/watch_videos?video_ids=" + ",".join(playl
 # Output results
 print("# Voting Report")
 
-print("\n## Playlist")
+print("## Playlist")
 print(playlist_url)
 
-print("\n## Scores")
+print("## Top Ten")
 utils.print_list(sorted_tracks, 10)
 
 if len(public_lists) > 0:
-    print("\n## Public Lists")
+    print("## Public Lists")
     for ranking in public_lists:
-        print(ranking[0][1])
+        print(f"### {ranking[0][1]}")
         for index, item in ranking[1:]:
             print(f"{index + 1}) {utils.extract_yt_meta(item)}")
-        print()
 
 if len(feedback_array) > 0:
-    print("\n## Feedback")
+    print("## Feedback")
     print("> " + "\n> ".join(feedback_array))

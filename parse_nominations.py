@@ -68,16 +68,17 @@ print("# Nomination Report")
 
 print("\n## Playlist")
 print(playlist_url)
+print("Additional:")
 if len(non_youtube_links) != 0:
-    print("\n".join(non_youtube_links))
+    print("- " + "\n- ".join(non_youtube_links))
 
-print(f"\n## Shortlist ({len(shortlist_tracks)})")
+print(f"## Shortlist ({len(shortlist_tracks)})")
 utils.print_list(sorted_tracks, len(shortlist_tracks))
 
 if len(commentary_array) > 0:
-    print("\n## Commentary")
+    print("## Commentary")
     print("> " + "\n> ".join(commentary_array))
 
 if len(feedback_array) > 0:
-    print("\n## Feedback")
-    print("\n".join(feedback_array))
+    print("## Feedback")
+    print("> " + "\n> ".join(feedback_array))

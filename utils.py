@@ -80,8 +80,4 @@ def print_list(links: list[tuple[str, int]], cutoff_index: int):
             ranking = i + 1
             last_ranking = (i, score)
 
-        print(
-            "{:<3} {:<6} {}".format(
-                f"{ranking})", score, extract_yt_meta(get_link(track_id))
-            )
-        )
+        print("{} {}".format(f"{ranking})", extract_yt_meta(get_link(track_id))))
