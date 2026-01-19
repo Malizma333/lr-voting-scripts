@@ -72,7 +72,7 @@ def print_list(links: list[tuple[str, int]], cutoff_index: int):
     last_ranking = (0, -1)
     for i, (track_id, score) in enumerate(links):
         if i == cutoff_index:
-            print(f"\n## Eliminated ({len(links) - cutoff_index})")
+            print(f"## Eliminated ({len(links) - cutoff_index})")
 
         if score == last_ranking[1]:
             ranking = last_ranking[0] + 1
@@ -80,4 +80,8 @@ def print_list(links: list[tuple[str, int]], cutoff_index: int):
             ranking = i + 1
             last_ranking = (i, score)
 
-        print("{} {}".format(f"{ranking})", extract_yt_meta(get_link(track_id))))
+        print(
+            "{}) {} ({} points)".format(
+                ranking, extract_yt_meta(get_link(track_id)), score
+            )
+        )
